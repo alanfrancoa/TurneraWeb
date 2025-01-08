@@ -22,7 +22,7 @@ Administrador:
 - **Sistema de Autenticación**: con credenciales especiales para administrador y con Google Auth para pacientes.
 
 
-Alumno: 
+Paciente: 
 - **Turnos**: visualiza un buscador de turnos donde podra ver por el DNI deseado.
 - **Turnos del Paciente**: visualiza un listado del historial de turnos del paciente.
 - **Perfil**: visualiza detalles de su cuenta.
