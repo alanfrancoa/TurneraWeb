@@ -52,8 +52,10 @@ Edita el archivo appsettings.json:
   "ConnectionStrings": {
     "DefaultConnection": " "ConnectionString": "Server=tcp:servidor-unlz-tpturnera.database.windows.net,1433;Initial Catalog=turnera_db;Persist Security Info=False;User ID=adminturnera;Password=Admin1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;""
   },
+
+  (Claves provistas en Google Console Cloud)
   "GoogleAuth": {
-    "ClientId": "your-client-id", (Claves provistas en Google Console Cloud)
+    "ClientId": "your-client-id", 
     "ClientSecret": "your-client-secret"
   },
   "AppUrl": "http://localhost:5000" (URL del localhost de tu proyecto)
