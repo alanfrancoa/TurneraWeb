@@ -50,7 +50,7 @@ Edita el archivo appsettings.json:
 
  {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Database=TurnosDB;Trusted_Connection=True;"
+    "DefaultConnection": " "ConnectionString": "Server=tcp:servidor-unlz-tpturnera.database.windows.net,1433;Initial Catalog=turnera_db;Persist Security Info=False;User ID=adminturnera;Password=Admin1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;""
   },
   "GoogleAuth": {
     "ClientId": "your-client-id", (Claves provistas en Google Console Cloud)
