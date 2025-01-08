@@ -1,0 +1,46 @@
+﻿@model UNLZ.Turnera.Web.Models.PacienteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Eliminar Paciente</h1>
+
+<h3>¿Estás seguro de que deseas marcar este paciente como "Inactivo"?</h3>
+<div>
+    <h4>Paciente</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            DNI
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.model.DniPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            Nombre
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.model.NombrePaciente)
+        </dd>
+        <dt class="col-sm-2">
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.model.EmailPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            Teléfono
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.model.TelefonoPaciente)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" name="dniPaciente" value="@Model.model.DniPaciente" />
+        <input type="submit" value="Confirmar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

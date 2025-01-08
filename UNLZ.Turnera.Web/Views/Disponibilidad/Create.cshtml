@@ -1,0 +1,56 @@
+﻿@model UNLZ.Turnera.Web.Models.DisponibilidadModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label class="control-label">Fecha</label>
+                <input asp-for="model.Dia" type="date" class="form-control" />
+                <span asp-validation-for="model.Dia" class="text-danger"></span>
+            </div>
+    
+            <div class="form-group">
+                <label class="control-label">Hora Inicio</label>
+                <input asp-for="model.HoraInicio" type="time" class="form-control" />
+                <span asp-validation-for="model.HoraInicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Hora Fin</label>
+                <input asp-for="model.HoraFin" type="time" class="form-control" />
+                <span asp-validation-for="model.HoraFin" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="model.IdProfesional" class="control-label"></label>
+                @Html.DropDownListFor(m => m.model.IdProfesional, Model.ListaProfesionalesItem, "Seleccione un profesional", new { @class = "form-control" })
+                <span asp-validation-for="model.IdProfesional" class="text-danger"></span>
+            </div>
+
+
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+			
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

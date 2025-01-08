@@ -1,0 +1,44 @@
+﻿ <!-- Mensaje de error -->
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+<!-- Formulario de login -->
+<form asp-controller="Login" asp-action="LoginWithCredentials" method="post">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="card p-4" style="border-radius: 20px; border: 1px solid #007bff; background-color: #f7f9fc;">
+                    <h4 class="text-center" style="color: #007bff; font-weight: bold;">Iniciar sesión</h4>
+                    <form>
+                        <div class="form-group">
+                            <label for="email" style="font-weight: bold; color: #007bff;">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" style="border-radius: 20px; border: 1px solid #007bff; box-shadow: none;" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" style="font-weight: bold; color: #007bff;">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" style="border-radius: 20px; border: 1px solid #007bff; box-shadow: none;" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <button type="submit" class="btn btn-primary btn-block" style="border-radius: 20px; font-weight: bold; background-color: #007bff; border: none;">
+                                    Iniciar sesión
+                                </button>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <a asp-controller="Login" asp-action="Login" class="btn btn-outline-primary btn-block" style="border-radius: 20px; font-weight: bold; color: #007bff; border: 1px solid #007bff; background-color: #fff; transition: none;">
+                                    Loguearse con Google
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

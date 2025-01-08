@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNLZ.Turnera.Manager", "UNLZ.Turnera.Manager\UNLZ.Turnera.Manager.csproj", "{C0D549B2-BFE1-47AB-A4B6-76CC83BD6FF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNLZ.Turnera.Web", "UNLZ.Turnera.Web\UNLZ.Turnera.Web.csproj", "{661F1108-017A-435D-93F9-CFC03E881D39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0D549B2-BFE1-47AB-A4B6-76CC83BD6FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0D549B2-BFE1-47AB-A4B6-76CC83BD6FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0D549B2-BFE1-47AB-A4B6-76CC83BD6FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0D549B2-BFE1-47AB-A4B6-76CC83BD6FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661F1108-017A-435D-93F9-CFC03E881D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661F1108-017A-435D-93F9-CFC03E881D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661F1108-017A-435D-93F9-CFC03E881D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661F1108-017A-435D-93F9-CFC03E881D39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A85F5684-0F97-49A0-B8CE-A4222E765875}
+	EndGlobalSection
+EndGlobal

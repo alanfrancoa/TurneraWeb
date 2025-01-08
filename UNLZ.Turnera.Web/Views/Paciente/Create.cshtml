@@ -1,0 +1,49 @@
+﻿@model UNLZ.Turnera.Web.Models.PacienteModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Agregar</h1>
+
+<h4>Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="model.DniPaciente" class="control-label"></label>
+                <input asp-for="model.DniPaciente" class="form-control" />
+                <span asp-validation-for="model.DniPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model.NombrePaciente" class="control-label"></label>
+                <input asp-for="model.NombrePaciente" class="form-control" />
+                <span asp-validation-for="model.NombrePaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model.EmailPaciente" class="control-label"></label>
+                <input asp-for="model.EmailPaciente" class="form-control" />
+                <span asp-validation-for="model.EmailPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model.TelefonoPaciente" class="control-label"></label>
+                <input asp-for="model.TelefonoPaciente" class="form-control" />
+                <span asp-validation-for="model.TelefonoPaciente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear paciente" class="btn btn-primary mt-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary btn-sm mt-1">Volver al listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<UNLZ.Turnera.Manager.Entidades.Paciente>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listado de pacientes</h1>
+
+<p>
+    <a asp-action="Create" , class = "btn btn-primary btn-sm" >Agregar paciente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DniPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombrePaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DniPaciente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePaciente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailPaciente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoPaciente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { dniPaciente = item.DniPaciente }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Detalles", "Details", new { dniPaciente = item.DniPaciente }, new { @class = "btn btn-primary btn-sm" })
+                    @if (item.Estado == "Inactivo")
+                    {
+                        <button class="btn btn-secondary btn-sm" disabled>Dar de baja</button>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Dar de baja", "Delete", new { dniPaciente = item.DniPaciente }, new { @class = "btn btn-danger btn-sm" })
+                    }
+                </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+﻿@model UNLZ.Turnera.Web.Models.EspecialidadModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Especialidad</h4>
+    <hr />
+    <dl class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="model.NombreEspecialidad" class="control-label"></label>
+                <input asp-for="model.NombreEspecialidad" class="form-control" disabled />
+                <span asp-validation-for="model.NombreEspecialidad" class="text-danger"></span>
+            </div>
+        </div>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.model.IdEspecialidad  }, new { @class = "btn btn-primary btn-sm mr-1" })
+    <a asp-action="Index" class="btn btn-secondary btn-sm mt-1">Volver al listado</a>
+</div>

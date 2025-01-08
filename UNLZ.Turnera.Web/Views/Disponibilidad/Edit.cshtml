@@ -1,0 +1,64 @@
+﻿@model UNLZ.Turnera.Web.Models.DisponibilidadModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Disponibilidad</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="model.Dia" class="control-label">Fecha</label>
+                <input asp-for="model.Dia" type="date" class="form-control" />
+                <span asp-validation-for="model.Dia" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="model.HoraInicio" class="control-label">Hora Inicio</label>
+                <input asp-for="model.HoraInicio" type="time" class="form-control" />
+                <span asp-validation-for="model.HoraInicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="model.HoraFin" class="control-label">Hora Fin</label>
+                <input asp-for="model.HoraFin" type="time" class="form-control" />
+                <span asp-validation-for="model.HoraFin" class="text-danger"></span>
+            </div>
+    
+            <div class="form-group">
+                <label asp-for="model.Estado" class="control-label">Estado</label>
+                <select asp-for="model.Estado" name="estado" id="estado">
+                    <option value="activo">activo</option>
+                    <option value="inactivo">inactivo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="idDisponibilidad" value="@Model.model.IdDisponibilidad" />
+
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>  
+
+
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { idDisponibilidad = Model.model.IdDisponibilidad }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

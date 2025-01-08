@@ -1,0 +1,46 @@
+﻿@model UNLZ.Turnera.Web.Models.DisponibilidadModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>DisponibilidadModel</h4>
+    <hr />
+    <dl class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+
+        <label asp-for="model.HoraInicio" class="control-label"></label>
+        <input asp-for="model.HoraInicio" class="form-control" disabled />
+        <span asp-validation-for="model.HoraInicio" class="text-danger"></span>
+
+        <label asp-for="model.HoraFin" class="control-label"></label>
+        <input asp-for="model.HoraFin" class="form-control" disabled />
+        <span asp-validation-for="model.HoraFin" class="text-danger"></span>
+
+        <label asp-for="model.IdProfesional" class="control-label"></label>
+        <input asp-for="model.IdProfesional" class="form-control" disabled />
+        <span asp-validation-for="model.IdProfesional" class="text-danger"></span>
+
+        <label asp-for="model.Dia" class="control-label"></label>
+        <input asp-for="model.Dia" class="form-control" disabled />
+        <span asp-validation-for="model.Dia" class="text-danger"></span>
+
+        <label asp-for="model.Estado" class="control-label"></label>
+        <input asp-for="model.Estado" class="form-control" disabled />
+        <span asp-validation-for="model.Estado" class="text-danger"></span>
+        <span asp-validation-for="model.Estado" class="text-danger"></span>
+
+            </div>
+
+        </div>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

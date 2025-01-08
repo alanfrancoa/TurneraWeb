@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Context.User.Identity.IsAuthenticated)
+{
+    
+
+    @if (User.IsInRole("Administrador"))
+    {
+        <div class="text-left">
+            <h1 class="display-4 fw-bold">Bienvenido al sistema de Gestion</h1>
+            <p>Podras gestionar todos los elementos de la turnera.</p>
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <h1 class="display-4 fw-bold">Bienvenido a la Turnera medica UNLZ</h1>
+            <p>Podras ver y gestionar tus turnos.</p>
+        </div>
+    }
+}
+
+

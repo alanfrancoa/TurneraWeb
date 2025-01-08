@@ -1,0 +1,58 @@
+﻿@model UNLZ.Turnera.Web.Models.TurnoModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalle del turno</h1>
+
+<div>
+    
+    
+    <hr />
+    <dl class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="control-label">Paciente</label>
+                <input type="text" class="form-control" value="@ViewData["NombrePacienteDni"]" disabled />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Fecha de Creación</label>
+                <input type="text" class="form-control" value="@ViewData["FechaCreacion"]" disabled />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Hora de Creación</label>
+                <input asp-for="model.HoraCreacion" class="form-control" disabled />
+                <span asp-validation-for="model.HoraCreacion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Profesional y especialidad</label>
+                <!-- Mostrar el nombre del profesional y su especialidad desde ViewData -->
+                <input type="text" class="form-control" value="@ViewData["ProfesionalEspecialidad"]" disabled />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Disponibilidad</label>
+                <input type="text" class="form-control" value="@ViewData["DisponibilidadHorario"]" disabled />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="model.EstadoTurno" class="control-label">Estado</label>
+                <input type="text" class="form-control" value="@Model.model.EstadoTurno" disabled />
+            </div>
+        </div>
+    </dl>
+</div>
+
+<div>
+    <div class="form-group">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.model.IdTurno }, new { @class = "btn btn-primary mt-1" })
+    </div>
+  
+    <a asp-action="Index" class="btn btn-secondary mt-1">Volver al listado</a>
+   
+</div>

@@ -1,0 +1,67 @@
+﻿@model UNLZ.Turnera.Web.Models.TurnoModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Agregar Turno</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @* Campo Paciente(Dropdown) *@
+            <div class="form-group">
+                <label asp-for="model.DniPaciente" class="control-label"></label>
+                @Html.DropDownListFor(m => m.model.DniPaciente, Model.ListaPacientes, "Seleccione un paciente", new { @class = "form-control" })
+                <span asp-validation-for="model.DniPaciente" class="text-danger"></span>
+            </div>
+       
+            @* //campo Fecha del turno// *@
+            <div class="form-group">
+                <label class="control-label">Fecha</label>
+                <input asp-for="model.FechaCreacion" type="date" class="form-control" />
+                <span asp-validation-for="model.FechaCreacion" class="text-danger"></span>
+            </div>
+
+            @* //campo hora del turno// *@
+            <div class="form-group">
+                <label class="control-label">Hora</label>
+                <input asp-for="model.HoraCreacion" type="time" class="form-control" />
+                <span asp-validation-for="model.HoraCreacion" class="text-danger"></span>
+            </div>
+
+
+            @* Campo Profesional Médico (Dropdown) *@
+            <div class="form-group">
+                <label asp-for="model.IdProfesional" class="control-label"></label>
+                @Html.DropDownListFor(m => m.model.IdProfesional, Model.ListaProfesionales, "Seleccione un profesional", new { @class = "form-control" })
+                <span asp-validation-for="model.IdProfesional" class="text-danger"></span>
+            </div>
+                        
+            @* Campo Disponibilidad (Dropdown) *@
+            <div class="form-group">
+                <label asp-for="model.IdDisponibilidad" class="control-label"></label>
+                @Html.DropDownListFor(m => m.model.IdDisponibilidad, Model.ListaDisponibilidades, "Seleccione una disponibilidad", new { @class = "form-control" })
+                <span asp-validation-for="model.IdDisponibilidad" class="text-danger"></span>
+            </div>
+
+                
+            <div class="form-group">         
+                <input type="submit" value="Agregar" class="btn btn-primary mt-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary mt-1">Volver al listado</a>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

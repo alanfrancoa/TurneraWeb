@@ -1,0 +1,86 @@
+﻿@model IEnumerable<UNLZ.Turnera.Manager.ModelFactories.TurnoCompleto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listado Turnos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary btn-sm">Agregar Turno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTurno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProfesional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DniPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoTurno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTurno)
+                </td>
+                <td>
+                    @item.FechaCreacion.ToString("d")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraCreacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreProfesional)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DniPaciente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraFin)
+                </td>
+                <td class="@(item.EstadoTurno.ToLower() == "confirmado" ? "text-success" : item.EstadoTurno.ToLower() == "cancelado" ? "text-danger" : "")">
+                    @Html.DisplayFor(modelItem => item.EstadoTurno)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdTurno }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Detalle", "Details", new { id = item.IdTurno }, new { @class = "btn btn-primary btn-sm" })
+                    @if (item.EstadoTurno == "Cancelado")
+                    {
+                        <button class="btn btn-secondary btn-sm" disabled>Cancelar</button>
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Cancelar", "Delete", new { id = item.IdTurno }, new { @class = "btn btn-danger btn-sm" })
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

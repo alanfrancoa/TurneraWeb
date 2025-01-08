@@ -1,0 +1,53 @@
+﻿@model UNLZ.Turnera.Web.Models.ProfesionalModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Agregar</h1>
+
+<h4>Profesional</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label class="control-label">Nombre</label>
+                <input asp-for="model.NombreProfesional" class="form-control" />
+                <span asp-validation-for="model.NombreProfesional" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input asp-for="model.EmailProfesional" class="form-control" />
+                <span asp-validation-for="model.EmailProfesional" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Telefono</label>
+                <input asp-for="model.TelefonoProfesional" class="form-control" />
+                <span asp-validation-for="model.TelefonoProfesional" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model.IdEspecialidad" class="control-label"></label>
+                @Html.DropDownListFor(e => e.model.IdEspecialidad, Model.ListaEspecialidadesItem, "Selecciona la especialidad", new { @class = "form-control" })
+                <span asp-validation-for="model.IdEspecialidad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Crear profesional" class="btn btn-primary mt-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary btn-sm mt-1">Volver al listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<UNLZ.Turnera.Manager.Entidades.Turno>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Turnos por paciente</h1>
+
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["Mensaje"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().IdTurno)</th>
+                <th>@Html.DisplayNameFor(model => model.First().FechaCreacion)</th>
+                <th>@Html.DisplayNameFor(model => model.First().HoraCreacion)</th>
+                <th>@Html.DisplayNameFor(model => model.First().IdProfesional)</th>
+                <th>@Html.DisplayNameFor(model => model.First().DniPaciente)</th>
+                <th>@Html.DisplayNameFor(model => model.First().IdDisponibilidad)</th>
+                <th>@Html.DisplayNameFor(model => model.First().EstadoTurno)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdTurno</td>
+                    <td>@item.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                    <td>@item.HoraCreacion</td>
+                    <td>@item.IdProfesional</td>
+                    <td>@item.DniPaciente</td>
+                    <td>@item.IdDisponibilidad</td>
+                    <td>@item.EstadoTurno</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        No hay turnos disponibles para mostrar.
+    </div>
+}

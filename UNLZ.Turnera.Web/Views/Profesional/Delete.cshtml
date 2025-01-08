@@ -1,0 +1,43 @@
+﻿@model UNLZ.Turnera.Web.Models.ProfesionalModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Eliminar Profesional</h1>
+
+<h3>¿Estás seguro de que deseas marcar este paciente como "Inactivo"?</h3>
+<div>
+    <h4>Profesional</h4>
+    <hr />
+    <dl class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+
+
+                <label asp-for="model.NombreProfesional" class="control-label"></label>
+                <input asp-for="model.NombreProfesional" class="form-control" disabled />
+                <span asp-validation-for="model.NombreProfesional" class="text-danger"></span>
+
+                <label asp-for="model.EmailProfesional" class="control-label"></label>
+                <input asp-for="model.EmailProfesional" class="form-control" disabled />
+                <span asp-validation-for="model.EmailProfesional" class="text-danger"></span>
+
+                <label asp-for="model.TelefonoProfesional" class="control-label"></label>
+                <input asp-for="model.TelefonoProfesional" class="form-control" disabled />
+                <span asp-validation-for="model.TelefonoProfesional" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="model.IdEspecialidad" class="control-label"></label>
+                @Html.DropDownListFor(e => e.model.IdEspecialidad, Model.ListaEspecialidadesItem, "Selecciona la especialidad", new { @class = "form-control", @disabled = "true" })
+                <span asp-validation-for="model.IdEspecialidad" class="text-danger"></span>
+            </div>
+        </div>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Confirmar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
