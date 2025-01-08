@@ -1,6 +1,6 @@
 # Sistema de Gestión de Turnos para Profesionales 
 
-Este proyecto es un sistema de gestión turnos desarrollado en .NET Framework (Front con ASP y Back con C#). Permite gestionar turnos, disponibilidad, profesionales, especialidades y pacientes. El sistema incluye funcionalidades de autenticación con Google Auth, ABMs (Altas, Bajas, Modificaciones) y vistas diferenciadas para administración y usuarios.
+Este proyecto es un sistema de gestión turnos desarrollado en .NET Framework (Front con ASP.NET, Razor y Back con C#). Permite gestionar turnos, disponibilidad, profesionales, especialidades y pacientes. El sistema incluye funcionalidades de autenticación con Google Auth, ABMs (Altas, Bajas, Modificaciones) y vistas diferenciadas para administración y usuarios.
 
 # Indice 
 - [Funcionalidades y roles principales]
